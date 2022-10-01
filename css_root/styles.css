@@ -1,0 +1,13 @@
+/*
+    Created on : Oct 1, 2022, 8:19:44 PM
+    Author     : rivorra
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
