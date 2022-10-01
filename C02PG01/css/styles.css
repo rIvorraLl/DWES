@@ -1,0 +1,21 @@
+/* 
+    Created on : Oct 1, 2022, 4:02:58 PM
+    Author     : alt
+*/
+
+* {
+    font-size: 20px;
+}
+
+table {
+    border: 2px solid black;
+    width: 800px;
+
+}
+th {
+    border-top: 2px solid black;
+}
+
+.upperRow {
+   background-color: orchid; 
+}
