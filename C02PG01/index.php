@@ -18,7 +18,6 @@
         }
 
         function varMatrix() {
-            $i = 0;
             $emptyArray = array();
 
             $unset_val = unset_value($vars[$i]);
@@ -33,7 +32,7 @@
                 $emptyArray,
                 $unset_val
             );
-            
+
             $string_vars = array(
                 '$var = null',
                 '$var = 0',
@@ -45,17 +44,17 @@
                 '$var = array()',
                 'unset($var)'
             );
-            
+
             echo '<table>'
             . '<tr class=\'upperRow\'>'
-                    . '<th>Fila</th>'
-                    . '<th>Contenido de $var</th>'
-                    . '<th>isset($var)</th>'
-                    . '<th>empty($var)</th>'
-                    . '<th>(bool)$var</th>'
-                    . '<th>is_null($var)</th>'
+            . '<th>Fila</th>'
+            . '<th>Contenido de $var</th>'
+            . '<th>isset($var)</th>'
+            . '<th>empty($var)</th>'
+            . '<th>(bool)$var</th>'
+            . '<th>is_null($var)</th>'
             . '</th>';
-            
+
             for ($i = 0; $i < 9; $i++) {
                 $bool_isset = isset($vars[$i]) ? 'true' : 'false';
                 $bool_empty = empty($vars[$i]) ? 'true' : 'false';
