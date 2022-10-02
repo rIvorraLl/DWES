@@ -3,11 +3,31 @@
     Author     : rivorra
 */
 
-body {
+header {
     display: flex;
+    background-color: #000099;
+    color: white;
+    padding: 2%;
+    margin: auto;
     flex-direction: column;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 100%;
 }
 
+h1, h3 {
+    margin: auto;
+
+}
+
+main, div {
+    display: flex;
+    background-color: #ffffff;
+    padding: 2%;
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+a {
+    margin: auto;
+}
