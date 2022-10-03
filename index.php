@@ -19,6 +19,7 @@
         <main>
             <div>
             <a href="C02PG01/index.php">Ejercicio 1: crear una matriz de comprobación de diferentes pares función/valor</a>
+            <a href="TablaMultiplicar/Tabla.php">Ejercicio 2: crear una matriz con la tabla de multiplicar</a>
             </div>
         </main>
     </body>
