@@ -15,6 +15,7 @@
         <main>
             <table border=1px>
                 <?php
+                $first_row = '';
                 echo '<tr><th>*</th>';
                 for ($k = 0; $k < 11; $k++) {
                     $first_row .= "<th>$k</th>";
