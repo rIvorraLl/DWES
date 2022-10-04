@@ -8,8 +8,8 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/scripts.js"></script>
+        <link rel="stylesheet" href="/css/styles_generic.css">
+        <script src="/js/scripts.js"></script>
     </head>
     <body>
         <main>
@@ -62,12 +62,12 @@
                     $bool_empty = empty($vars[$i]) ? 'true' : 'false';
                     $bool_bool = $vars[$i] ? 'true' : 'false';
                     $bool_isnull = is_null($vars[$i]) ? 'true' : 'false';
-                    echo '<tr>' . '<th>' . $i + 1 . '</th>'
-                    . '<th>' . $string_vars[$i] . '</th>'
-                    . '<th>' . $bool_isset . '</th>'
-                    . '<th>' . $bool_empty . '</th>'
-                    . '<th>' . $bool_bool . '</th>'
-                    . '<th>' . $bool_isnull . '</th>'
+                    echo '<tr>' . '<td>' . $i + 1 . '</td>'
+                    . '<td>' . $string_vars[$i] . '</td>'
+                    . '<td>' . $bool_isset . '</td>'
+                    . '<td>' . $bool_empty . '</td>'
+                    . '<td>' . $bool_bool . '</td>'
+                    . '<td>' . $bool_isnull . '</td>'
                     . '</tr>';
                 }
                 echo '</table>';

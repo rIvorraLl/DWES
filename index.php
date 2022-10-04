@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <!--
-    --- Exercise C02PG01 ---
-    Print a matrix with the output of different
-    functions with different variable values.
+    Landing page
 -->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="css_root/styles.css">
+        <link rel="stylesheet" href="css/styles_main.css">
     </head>
     <body>
         <header>
@@ -18,8 +16,8 @@
         </header>
         <main>
             <div>
-            <a href="C02PG01/index.php">Ejercicio 1: crear una matriz de comprobación de diferentes pares función/valor</a>
-            <a href="TablaMultiplicar/Tabla.php">Ejercicio 2: crear una matriz con la tabla de multiplicar</a>
+                <a href="C02PG01/index.php">Ejercicio 1: crear una matriz de comprobación de diferentes pares función/valor</a>
+                <a href="TablaMultiplicar/Tabla.php">Ejercicio 2: crear una matriz con la tabla de multiplicar</a>
             </div>
         </main>
     </body>

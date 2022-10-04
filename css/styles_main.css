@@ -25,6 +25,7 @@ main, div {
     margin: auto;
     flex-direction: column;
     width: 100%;
+    font-size: 1em;
 
 }
 
