@@ -7,21 +7,23 @@
     </head>
     <body>
         <main>
-            <?php
-            error_reporting(E_ALL);
-            var_dump($_GET);
-            echo '<br/>';
-            if ((bool) ['nombre'] == true && (bool) $_GET['edad'] == true) {
-                $nombre = $_GET['nombre'];
-                $edad = $_GET['edad'];
+            <div class="bloque1">
+                <?php
+                // var_dump($_GET);
 
-                echo "Hola, $nombre<br>"
-                . "Tienes $edad años<br />";
-            } else {
-                echo 'Introduce tu nombre y tu edad.<br />';
-            }
-            echo '<div><a href="index_formulario.html">Volver</a></div>';
-            ?>
+                echo '<br/>';
+                if ((bool) ['nombre'] == true && (bool) $_GET['edad'] == true) {
+                    $nombre = $_GET['nombre'];
+                    $edad = $_GET['edad'];
+
+                    echo "Hola, $nombre<br>"
+                    . "Tienes $edad años<br />";
+                } else {
+                    echo 'Introduce tu nombre y tu edad.<br />';
+                }
+                echo '<div><a href="index_formulario.html">Volver</a></div>';
+                ?>
+            </div>
         </main>
     </body>
 </html>

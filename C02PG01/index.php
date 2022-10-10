@@ -21,12 +21,10 @@
 
             function varMatrix() {
                 $emptyArray = array();
-                
+
                 $vars = [];
                 $i = 0;
-
                 $unset_val = unset_value($vars[$i]);
-
                 $vars = array(null,
                     0,
                     true,
