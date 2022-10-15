@@ -8,7 +8,6 @@
         <script src="/js/scripts.js"></script>
     </head>
     <body>
-        <br/> 
         <div class="bloque1">
             <form method="GET">
                 <label for="nombre">Nombre:</label><br>

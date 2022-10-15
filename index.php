@@ -20,6 +20,7 @@
                 <a href="TablaMultiplicar/Tabla.php">Ejercicio 2: crear una matriz con la tabla de multiplicar</a>
                 <a href="Formulario/index_formulario.html">Ejercicio 3: primer formulario</a>
                 <a href="AgendaGet/indexGet.php">Ejercicio 4: formulario con persistencia de datos en peticiones GET</a>
+                <a href="AlgoritmosOrdenacion/Sorting.php">Ejercicio 5: algoritmos de ordenación</a>
                 <a href="FibonacciRecursivo/FibonacciR.php">Práctica recursividad: Fibonacci recursivo</a>
             </div>
         </main>
