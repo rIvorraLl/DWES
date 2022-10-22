@@ -30,8 +30,6 @@
             ?>
             <input type='hidden' id='oculto' name='oculto' value='<?php echo $arrayNombreEdad; ?>'>
             <br />
-            <?php
-            ?>
             <button type="submit">Enviar</button>
         </form>
     </div>
