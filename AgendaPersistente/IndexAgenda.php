@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>Formulario con persistencia local</title>
         <meta charset="UTF-8">
@@ -8,18 +7,16 @@
         <link rel="stylesheet" href="/css/styles_generic.css">
         <script src="/js/scripts.js"></script>
     </head>
-
     <body>
         <div class="bloque1">
-            <h3>Agenda de contactos</h3>   
+            <h3>Agenda de contactos</h3>
         </div>
         <?php
-        if (isset($_GET['arrayNombreTelefono']))
+        if (isset($_GET['arrayNombreTelefono'])) {
             $arrayNombreTelefono = $_GET['arrayNombreTelefono'];
-        else
-            $arrayNombreTelefono = []; // Creamos $agenda como un array vacío  
-
-
+        } else {
+            $arrayNombreTelefono = [];
+        }
         if (isset($_GET['enviar'])) {
             $nombre = filter_input(INPUT_GET, 'nombre');
             $telefono = filter_input(INPUT_GET, 'telefono');
