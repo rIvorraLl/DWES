@@ -8,15 +8,28 @@
         <script src="/js/scripts.js"></script>
     </head>
     <body>
+        <!-- Creación de una agenda de contactos, con persistencia
+        de datos a través de peticiones GET. -->
         <div class="bloque1">
             <h3>Agenda de contactos</h3>
         </div>
         <?php
+        /*
+         * Comprobación: si la agenda está vacía, se crea.
+         * En caso contrario, se asigna el contenido de la petición
+         * GET a la agenda. 
+         */
         if (isset($_GET['arrayNombreTelefono'])) {
             $arrayNombreTelefono = $_GET['arrayNombreTelefono'];
         } else {
             $arrayNombreTelefono = [];
         }
+        /*
+         * Al enviar el formulario, se asignan los valores correspondientes
+         * a las variables $nombre y $telefono.
+         * Si el campo de nombre ha quedado vacío, se imprime un mensaje
+         * de aviso.
+         */
         if (isset($_GET['enviar'])) {
             $nombre = filter_input(INPUT_GET, 'nombre');
             $telefono = filter_input(INPUT_GET, 'telefono');
@@ -34,6 +47,10 @@
         <div class="bloque1">
             <form>
                 <?php
+                /* 
+                 * Creación de campos ocultos del formulario a través de un
+                 * bucle foreach. A continuación están los campos visibles.
+                 */
                 foreach ($arrayNombreTelefono as $n => $t) {
                     echo '<input type="hidden" name="arrayNombreTelefono['
                     . $n . ']" '
@@ -48,6 +65,11 @@
         </div>
         <br />
         <?php
+        /* 
+         * Cuando la agenda esté vacía, se imprimirá un mensaje que dé cuenta
+         * de esto. Si no está vacía, un bucle foreach será el encargado de
+         * imprimir el contenido de la agenda.
+         */
         if (count($arrayNombreTelefono) == 0) {
             echo '<div class="bloque1">No hay contactos en la agenda.</div>';
         } else {
