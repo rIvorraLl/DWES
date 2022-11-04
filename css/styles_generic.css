@@ -3,10 +3,6 @@
     Author     : rivorra
 */
 
-* {
-    font-size: 1vw;
-}
-
 body {
     display: flex;
     background-color: #ccccff;
