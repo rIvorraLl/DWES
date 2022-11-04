@@ -206,6 +206,14 @@
                 . imprimirArray($seleccion4) . '<br />'
                 . 'Array de números al azar, incluyendo negativos<br />'
                 . imprimirArray($seleccion5) . '<br />';
+                
+                /**
+                 * 
+                 * @param type $arr
+                 * @return type
+                 * 
+                 * Función de intercambio
+                 */
 
                 function intercambio($arr) {
                     for ($i = 0; $i < count($arr); $i++) {
