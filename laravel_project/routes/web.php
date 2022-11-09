@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return 'Patata';
+});
+
+Route::get('/patata', function () {
+    return 'Patata';
 });
 
 Route::get('/dashboard', function () {

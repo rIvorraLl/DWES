@@ -22,9 +22,10 @@
                 <a href="Formulario/index_formulario.html">Ejercicio 3: primer formulario</a>
                 <a href="AgendaPersistente/IndexAgenda.php">Ejercicio 4: formulario con persistencia de datos en peticiones GET</a>
                 <a href="AlgoritmosOrdenacion/Sorting.php">Ejercicio 5: algoritmos de ordenación</a>
+                <a href="PersonalEmpresa/index.php">Ejercicio 6: Orientación a objetos y cargadores de clase</a>
+                <a href="laravel_project/public/index.php">Primer proyecto Laravel</a>
                 <h3>Otros</h3>
                 <a href="FibonacciRecursivo/FibonacciR.php">Práctica recursividad: Fibonacci recursivo</a>
-                <!--<a href="laravel_project_1/public/index.php">Primer proyecto Laravel</a>-->
             </div>
         </main>
     </body>

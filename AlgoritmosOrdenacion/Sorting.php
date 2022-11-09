@@ -230,7 +230,6 @@
                 }
 
                 // Sección de impresión de los arrays ordenados
-
                 $intercambio1 = intercambio($vacio);
                 $intercambio2 = intercambio($ordenado);
                 $intercambio3 = intercambio($inverso);
