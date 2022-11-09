@@ -13,15 +13,7 @@ declare(strict_types=1);
             <?php
             include_once 'Cargador.php';
 
-            $magaliSzardos = new Programador(
-                    $name,
-                    $role,
-                    $phone,
-                    $address,
-                    $salary,
-                    $areaOfWork,
-                    $currentProject
-            );
+            $magaliSzardos = new Informaticos();
             $magaliSzardos->setName('Magali Szardos');
             $magaliSzardos->setPhone('345123764');
             $magaliSzardos->setRole('Programmer');
@@ -31,15 +23,7 @@ declare(strict_types=1);
             $magaliSzardos->setCurrentProject('Main web: refactoring');
             $magaliSzardos->printPersonalData();
 
-            $mikeSmith = new Programador(
-                    $name,
-                    $role,
-                    $phone,
-                    $address,
-                    $salary,
-                    $areaOfWork,
-                    $currentProject
-            );
+            $mikeSmith = new Informaticos();
             $mikeSmith->setName('Mike Smith');
             $mikeSmith->setPhone('347237529');
             $mikeSmith->setRole('Programmer');
@@ -48,6 +32,15 @@ declare(strict_types=1);
             $mikeSmith->setAreaOfWork('Front end JavaScript development');
             $mikeSmith->setCurrentProject('Add: web functionality');
             $mikeSmith->printPersonalData();
+
+            $alexJones = new Informaticos('Alex Jones',
+                    'System administrator',
+                    '555325268',
+                    '23 Ammonia Avenue, Michigan',
+                    120000,
+                    'Server maintenance',
+                    'Mainframe');
+            $alexJones->printPersonalData();
             ?>
             <div class="bloque1">
                 <input type="button" value="Volver al inicio" onclick="back()" id="button" />
