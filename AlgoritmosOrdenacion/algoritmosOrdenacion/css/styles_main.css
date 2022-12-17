@@ -1,0 +1,34 @@
+/*
+    Created on : Oct 1, 2022, 8:19:44 PM
+    Author     : rivorra
+*/
+
+header {
+    display: flex;
+    background-color: #000099;
+    color: white;
+    padding: 2%;
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+}
+
+h1, h3 {
+    margin: auto;
+
+}
+
+main, div {
+    display: flex;
+    background-color: #ffffff;
+    padding: 2%;
+    margin: auto;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1em;
+
+}
+
+a {
+    margin: auto;
+}
