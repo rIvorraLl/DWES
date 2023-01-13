@@ -34,7 +34,7 @@ class PostController extends Controller
     {
         $validated = $request->validated();
         $request->user()->posts()->create($validated);
-        return redirect(route('posts.index'))->with('message', 'Creado con éxito');
+        return redirect(route('posts.index'))->with('message', '¡Nuevo post!');
     }
     /**
      * Display the specified resource.
@@ -78,7 +78,7 @@ class PostController extends Controller
 
         $post->update($validated);
 
-        return redirect(route('posts.index'))->with('message', 'Actualizado con éxito');;
+        return redirect(route('posts.index'))->with('message', '¡Post actualizado!');;
     }
 
     /**
@@ -93,6 +93,6 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect(route('posts.index'))->with('message', 'Eliminado con éxito');
+        return redirect(route('posts.index'))->with('message', '¡Post eliminado!');
     }
 }

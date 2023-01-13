@@ -3,12 +3,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 @endphp
 <style>
-    #flexer {
+    /* #flexer {
         display: flex;
         flex-direction: column;
         width: 400px;
         margin: auto;
-    }
+    } */
 
     #titletext {
         font-size: 22px;
@@ -18,16 +18,27 @@ use Illuminate\Support\Facades\Auth;
         font-size: 14px;
         margin-left: 15px;
     }
+
+    .alert_text {
+        color: red;
+        margin: 10px;
+    }
+
 </style>
 <x-app-layout>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        <div class="mt-6 bg-white shadow-sm rounded-lg divide-y" id="flexer">
+        <div class="mt-6 bg-white shadow-sm rounded-lg divide-y" flex flex-col>
+            @if (session('message'))
+            <div class="alert alert-success">
+                {{-- <p class="alert_text">{{ session('message') }}</p> --}}
+                <p class="mt-2 text-red-500 p-4">{{ session('message') }}</p>
+            </div>
+            @endif
             @foreach ($posts as $post)
+            @if ($post->isPublic || $post->user->is(auth()->user()))
             <div class="p-6 flex space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
                 <div class="flex-1">
                     <div class="flex justify-between items-center">
@@ -43,10 +54,8 @@ use Illuminate\Support\Facades\Auth;
                         <x-dropdown>
                             <x-slot name="trigger">
                                 <button>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                     </svg>
                                 </button>
                             </x-slot>
@@ -57,8 +66,7 @@ use Illuminate\Support\Facades\Auth;
                                 <form method="POST" action="{{ route('posts.destroy', $post) }}">
                                     @csrf
                                     @method('delete')
-                                    <x-dropdown-link :href="route('posts.destroy', $post)"
-                                        onclick="event.preventDefault(); this.closest('form').submit();">
+                                    <x-dropdown-link :href="route('posts.destroy', $post)" onclick="event.preventDefault(); this.closest('form').submit();">
                                         {{ __('Delete') }}
                                     </x-dropdown-link>
                                 </form>
@@ -73,8 +81,7 @@ use Illuminate\Support\Facades\Auth;
                     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                         <form method="POST" action="{{ route('comments.store') }}">
                             @csrf
-                            <textarea name="comment" placeholder="{{ __('Comentar...') }}"
-                                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('comment') }}</textarea>
+                            <textarea name="comment" placeholder="{{ __('Comentar...') }}" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('comment') }}</textarea>
                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                             @php
                             $user_id = auth()->user()->id;
@@ -98,6 +105,7 @@ use Illuminate\Support\Facades\Auth;
                     @endif
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>

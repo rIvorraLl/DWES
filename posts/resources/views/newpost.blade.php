@@ -10,11 +10,11 @@
         <form method="POST" action="{{ route('posts.store') }}" id="flexer">
             @csrf
             <label for="title">Título de la publicación</label>
-            <input type="text" name="title" id="excerpt" required {{ old('title') }}>
+            <input type="text" name="title" id="excerpt" required value="{{ old('title') }}">
             <x-input-error :messages="$errors->get('title')" class="mt-2" />
 
             <label for="excerpt">Extracto publicación</label>
-            <input type="text" name="excerpt" id="excerpt" required {{ old('excerpt') }}>
+            <input type="text" name="excerpt" id="excerpt" required value="{{ old('excerpt') }}"">
             <x-input-error :messages="$errors->get('excerpt')" class="mt-2" />
             <hr>
             <br>
