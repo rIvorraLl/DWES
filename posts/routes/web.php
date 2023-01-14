@@ -24,13 +24,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/newpost', function() {
-    return view('newpost');
-    
-})->middleware(['auth', 'verified'])->name('newpost');
-
 Route::resource('posts', PostController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->only(['index', 'create', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('comments', CommentController::class)

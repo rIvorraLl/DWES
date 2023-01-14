@@ -35,12 +35,12 @@
 
             <label for="expirable">Caducable</label>
             <input type="hidden" name="expirable" value="0">
-            <input type="checkbox" id="expirable" name="expirable" value="1">
+            <input type="checkbox" id="expirable" name="expirable" value="1" @if(old('expirable') === '1') checked @endif)>
             <x-input-error :messages="$errors->get('expirable')" class="mt-2" />
 
             <label for="mentionable">No permitir comentarios</label>
             <input type="hidden" name="mentionable" value="1">
-            <input type="checkbox" id="mentionable" name="mentionable" value="0">
+            <input type="checkbox" id="mentionable" name="mentionable" value="0" @if(old('mentionable') === '0') checked @endif>
             <x-input-error :messages="$errors->get('mentionable')" class="mt-2" />
 
             <label for="isPublic">Acceso</label>
