@@ -19,7 +19,7 @@
                         {{ __('Posts') }}
                     </x-nav-link>
                     <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
-                        {{ __('New post') }}
+                        {{ __('Nuevo post') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 {{ __('Posts') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
-                {{ __('New post') }}
+                {{ __('Nuevo post') }}
             </x-responsive-nav-link>
         </div>
 

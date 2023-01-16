@@ -2,31 +2,8 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 @endphp
-<style>
-    /* #flexer {
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        margin: auto;
-    } */
-
-    #titletext {
-        font-size: 22px;
-    }
-
-    #commenttext {
-        font-size: 14px;
-        margin-left: 15px;
-    }
-
-    .alert_text {
-        color: red;
-        margin: 10px;
-    }
-
-</style>
 <x-app-layout>
-    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="max-w-2xl mx-auto p-2 sm:p-6 lg:p-8">
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y" flex flex-col>
             @if (session('message'))
             <div class="alert alert-success">
@@ -36,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
             @endif
             @foreach ($posts as $post)
             @if ($post->isPublic || $post->user->is(auth()->user()))
-            <div class="p-6 flex space-x-2 bg-gray-100 m-4">
+            <div class="p-6 flex space-x-2 bg-white-100 m-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
@@ -74,7 +51,9 @@ use Illuminate\Support\Facades\Auth;
                         </x-dropdown>
                         @endif
                     </div>
-                    <h2 class="mt-4" id="titletext">{{ $post->title }}</h2>
+                    <div class="bg-gray-50 p-2">
+                        <h1 class="mt-4 text-xl font-bold">{{ $post->title }}</h1>
+                    </div>
                     <p class="mt-4 text-lg text-gray-900"><i> {{ $post->excerpt }} </i></p>
                     <p class="mt-4 text-lg text-gray-900">{{ $post->content }}</p>
                     @if($post->mentionable)
@@ -99,8 +78,16 @@ use Illuminate\Support\Facades\Auth;
                     ->select('users.name')
                     ->get();
                     @endphp
-                    <small class="ml-2 text-sm text-gray-600"><i>{{ $user[0]->name }} ha dicho... </i></small>
-                    <p class="mt-4" id="commenttext">{{ $comment->comment }}</p>
+                    <div class="p-1 flex space-x-2 bg-white-100 m-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <small class="ml-2 text-sm text-gray-600"><i>{{ $user[0]->name }} ha dicho... </i></small>
+                    </div>
+                    <div class="p-3">
+                        <p class="mt-1">{{ $comment->comment }}</p>
+                    </div>
+                    <hr>
                     @endforeach
                     @endif
                 </div>
