@@ -31,6 +31,12 @@ class PostController extends Controller
         return view('posts.create');
     }
 
+    /**
+     * Store a new resource
+     *
+     * @param StorePostRequest $request
+     * @return void
+     */
     public function store(StorePostRequest $request)
     {
         $validated = $request->validated();

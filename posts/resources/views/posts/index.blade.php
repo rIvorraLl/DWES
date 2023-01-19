@@ -70,13 +70,14 @@ use Illuminate\Support\Facades\Auth;
                             <x-primary-button class="mt-4">{{ __('Comment') }}</x-primary-button>
                         </form>
                     </div>
-                    @foreach ($post->comment as $comment)
+                    @foreach ($post->comments as $comment)
                     @php
                     $user = DB::table('users')
                     ->join('comments', 'users.id', '=', 'comments.user_id')
                     ->where('users.id', '=', $comment->user_id)
                     ->select('users.name')
                     ->get();
+                    $commUser = $comment->user();
                     @endphp
                     <div class="p-1 flex space-x-2 bg-white-100 m-1">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -87,6 +88,28 @@ use Illuminate\Support\Facades\Auth;
                     <div class="p-3">
                         <p class="mt-1">{{ $comment->comment }}</p>
                     </div>
+                    <div class="flex justify-end">
+                    @if ($comment->user->is(auth()->user()))
+                    <x-dropdown>
+                        <x-slot name="trigger">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                </svg>
+                            </button>
+                        </x-slot>
+                        <x-slot name="content">
+                            <form method="POST" action="{{ route('comments.destroy', $comment) }}">
+                                @csrf
+                                @method('delete')
+                                <x-dropdown-link :href="route('comments.destroy', $comment)" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    {{ __('Delete') }}
+                                </x-dropdown-link>
+                            </form>
+                        </x-slot>
+                    </x-dropdown>
+                    @endif
+                </div>
                     <hr>
                     @endforeach
                     @endif
